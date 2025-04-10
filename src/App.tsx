@@ -1,10 +1,10 @@
 import './App.css';
-import { AppKey } from './components/KeyByIndex/AppKey';
+import { KeyRandom } from './components/KeyRandom/KeyRandom';
 
 function App() {
     return (
         <div className="App">
-            <AppKey />
+            <KeyRandom />
         </div>
     );
 }
