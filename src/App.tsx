@@ -1,11 +1,12 @@
-
-import './App.css'
+import './App.css';
+import { AppKey } from './components/KeyByIndex/AppKey';
 
 function App() {
-
-  return (
-<div className='App'></div>
-   
+    return (
+        <div className="App">
+            <AppKey />
+        </div>
+    );
 }
 
-export default App
+export default App;
