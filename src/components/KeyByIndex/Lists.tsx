@@ -1,31 +1,29 @@
 import { useEffect, useRef } from 'react';
 
 export const KeyIndex = ({
-    itemID,
     name,
     handleRemove,
 }: {
-    itemID: number;
     name: string;
-    handleRemove: (id: number) => void;
+    handleRemove: (id: string) => void;
 }) => {
     const prevRef = useRef(undefined);
 
     useEffect(() => {
-        console.log('предыдущее состояние изменилось ', prevRef, 'комп', name);
-        prevRef.current = itemID;
+        console.log('предыдущее состояние', prevRef, '-->', name);
+        prevRef.current = name;
     }, [prevRef]);
 
     useEffect(() => {
-        console.log(itemID, ' смонтировался', name);
+        console.log(name, ' смонтировался');
         return () => {
-            console.log(itemID, ' размонтироваля', name);
+            console.log(name, ' размонтироваля');
         };
-    }, [itemID]);
+    }, [name]);
 
     return (
-        <div onClick={() => handleRemove(itemID)}>
-            <span>{itemID + 1}</span>
+        <div onClick={() => handleRemove(name)}>
+            {/* <span>{itemID + 1}</span> */}
             <span>{name}</span>
         </div>
     );
